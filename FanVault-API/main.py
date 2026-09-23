@@ -8,6 +8,6 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/Sara")
-async def root():
-    return {"message": "Hello World, Sara"}
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: str | None = None):
+    return {"item_id": item_id, "q": q}
